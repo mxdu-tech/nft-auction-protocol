@@ -1,0 +1,725 @@
+{
+  "manifestVersion": "3.2",
+  "proxies": [
+    {
+      "address": "0x085Ab5880dff3EDaE319948946E1df5bF683934e",
+      "txHash": "0xca18f0864dce0b45fc95440aaa71bf83b73ce2cb59fcc84ac9385139bcb3cf17",
+      "kind": "uups"
+    }
+  ],
+  "impls": {
+    "26d5456e5894c27e1602fe0cf8a0bb5e06f50d87435bbcc4952c4efbee870a89": {
+      "address": "0xD6a0348b93F0FF2Ce8314875E40549844BF0d020",
+      "txHash": "0x5d18da024ca68b210bae0348fe02d97b451ec0ffc2f6aed22000e317d60fb643",
+      "layout": {
+        "solcVersion": "0.8.28",
+        "storage": [
+          {
+            "label": "nextAuctionId",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256",
+            "contract": "NFTAuctionMarketUUPS_V1",
+            "src": "contracts/NFTAuctionMarketUUPS_V1.sol:46"
+          },
+          {
+            "label": "auctions",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_mapping(t_uint256,t_struct(Auction)8800_storage)",
+            "contract": "NFTAuctionMarketUUPS_V1",
+            "src": "contracts/NFTAuctionMarketUUPS_V1.sol:47"
+          },
+          {
+            "label": "usdc",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_contract(IERC20)2032",
+            "contract": "NFTAuctionMarketUUPS_V1",
+            "src": "contracts/NFTAuctionMarketUUPS_V1.sol:51"
+          },
+          {
+            "label": "ethUsdFeed",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_contract(AggregatorV3Interface)9653",
+            "contract": "NFTAuctionMarketUUPS_V1",
+            "src": "contracts/NFTAuctionMarketUUPS_V1.sol:53"
+          },
+          {
+            "label": "usdcUsdFeed",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_contract(AggregatorV3Interface)9653",
+            "contract": "NFTAuctionMarketUUPS_V1",
+            "src": "contracts/NFTAuctionMarketUUPS_V1.sol:54"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)73_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)13_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(ReentrancyGuardStorage)226_storage": {
+            "label": "struct ReentrancyGuardUpgradeable.ReentrancyGuardStorage",
+            "members": [
+              {
+                "label": "_status",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_contract(AggregatorV3Interface)9653": {
+            "label": "contract AggregatorV3Interface",
+            "numberOfBytes": "20"
+          },
+          "t_contract(IERC20)2032": {
+            "label": "contract IERC20",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_uint256,t_struct(Auction)8800_storage)": {
+            "label": "mapping(uint256 => struct NFTAuctionMarketUUPS_V1.Auction)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Auction)8800_storage": {
+            "label": "struct NFTAuctionMarketUUPS_V1.Auction",
+            "members": [
+              {
+                "label": "seller",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "nft",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "tokenId",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "endTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "ended",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "highestBidToken",
+                "type": "t_address",
+                "offset": 1,
+                "slot": "4"
+              },
+              {
+                "label": "highestBidAmount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "5"
+              },
+              {
+                "label": "highestBidUsd18",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "6"
+              },
+              {
+                "label": "highestBidder",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "7"
+              },
+              {
+                "label": "minBidUsd18",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "8"
+              }
+            ],
+            "numberOfBytes": "288"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.ReentrancyGuard": [
+            {
+              "contract": "ReentrancyGuardUpgradeable",
+              "label": "_status",
+              "type": "t_uint256",
+              "src": "@openzeppelin/contracts-upgradeable/utils/ReentrancyGuardUpgradeable.sol:43",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "f4d7b7816582a9eb06cc789a83ab6b374c2ee844d57ce570bdbfd6f79c24b26b": {
+      "address": "0x65E6dCab69A049eC2c319d59f4e6BF600079fc16",
+      "txHash": "0x9a16b0ef53062d12ee111a07e68a61aaedf1dd1fde3780411514556aef805cde",
+      "layout": {
+        "solcVersion": "0.8.28",
+        "storage": [
+          {
+            "label": "nextAuctionId",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256",
+            "contract": "NFTAuctionMarketUUPS_V1",
+            "src": "contracts/NFTAuctionMarketUUPS_V1.sol:46"
+          },
+          {
+            "label": "auctions",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_mapping(t_uint256,t_struct(Auction)8800_storage)",
+            "contract": "NFTAuctionMarketUUPS_V1",
+            "src": "contracts/NFTAuctionMarketUUPS_V1.sol:47"
+          },
+          {
+            "label": "usdc",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_contract(IERC20)2032",
+            "contract": "NFTAuctionMarketUUPS_V1",
+            "src": "contracts/NFTAuctionMarketUUPS_V1.sol:51"
+          },
+          {
+            "label": "ethUsdFeed",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_contract(AggregatorV3Interface)9669",
+            "contract": "NFTAuctionMarketUUPS_V1",
+            "src": "contracts/NFTAuctionMarketUUPS_V1.sol:52"
+          },
+          {
+            "label": "usdcUsdFeed",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_contract(AggregatorV3Interface)9669",
+            "contract": "NFTAuctionMarketUUPS_V1",
+            "src": "contracts/NFTAuctionMarketUUPS_V1.sol:53"
+          },
+          {
+            "label": "feeRecipient",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_address",
+            "contract": "NFTAuctionMarketUUPS_V1",
+            "src": "contracts/NFTAuctionMarketUUPS_V1.sol:55"
+          },
+          {
+            "label": "feeBps",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_uint256",
+            "contract": "NFTAuctionMarketUUPS_V1",
+            "src": "contracts/NFTAuctionMarketUUPS_V1.sol:56"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)73_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)13_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(ReentrancyGuardStorage)226_storage": {
+            "label": "struct ReentrancyGuardUpgradeable.ReentrancyGuardStorage",
+            "members": [
+              {
+                "label": "_status",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_contract(AggregatorV3Interface)9669": {
+            "label": "contract AggregatorV3Interface",
+            "numberOfBytes": "20"
+          },
+          "t_contract(IERC20)2032": {
+            "label": "contract IERC20",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_uint256,t_struct(Auction)8800_storage)": {
+            "label": "mapping(uint256 => struct NFTAuctionMarketUUPS_V1.Auction)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Auction)8800_storage": {
+            "label": "struct NFTAuctionMarketUUPS_V1.Auction",
+            "members": [
+              {
+                "label": "seller",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "nft",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "tokenId",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "endTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "ended",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "highestBidToken",
+                "type": "t_address",
+                "offset": 1,
+                "slot": "4"
+              },
+              {
+                "label": "highestBidAmount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "5"
+              },
+              {
+                "label": "highestBidUsd18",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "6"
+              },
+              {
+                "label": "highestBidder",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "7"
+              },
+              {
+                "label": "minBidUsd18",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "8"
+              }
+            ],
+            "numberOfBytes": "288"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.ReentrancyGuard": [
+            {
+              "contract": "ReentrancyGuardUpgradeable",
+              "label": "_status",
+              "type": "t_uint256",
+              "src": "@openzeppelin/contracts-upgradeable/utils/ReentrancyGuardUpgradeable.sol:43",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "b0a165890f63ded162f3771b7a57b31ce23d46a927e143c05f1efe9487da94df": {
+      "address": "0x6E5F7Ba248F6deaC57ba0cfB565C0c7f24240f94",
+      "txHash": "0x652f549d1b387d41ca01b75ef71d48017f0055c2ab9ba84b413dc2f649d28bea",
+      "layout": {
+        "solcVersion": "0.8.28",
+        "storage": [
+          {
+            "label": "nextAuctionId",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256",
+            "contract": "NFTAuctionMarketUUPS_V1",
+            "src": "contracts/NFTAuctionMarketUUPS_V1.sol:46"
+          },
+          {
+            "label": "auctions",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_mapping(t_uint256,t_struct(Auction)8800_storage)",
+            "contract": "NFTAuctionMarketUUPS_V1",
+            "src": "contracts/NFTAuctionMarketUUPS_V1.sol:47"
+          },
+          {
+            "label": "usdc",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_contract(IERC20)2032",
+            "contract": "NFTAuctionMarketUUPS_V1",
+            "src": "contracts/NFTAuctionMarketUUPS_V1.sol:51"
+          },
+          {
+            "label": "ethUsdFeed",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_contract(AggregatorV3Interface)9669",
+            "contract": "NFTAuctionMarketUUPS_V1",
+            "src": "contracts/NFTAuctionMarketUUPS_V1.sol:52"
+          },
+          {
+            "label": "usdcUsdFeed",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_contract(AggregatorV3Interface)9669",
+            "contract": "NFTAuctionMarketUUPS_V1",
+            "src": "contracts/NFTAuctionMarketUUPS_V1.sol:53"
+          },
+          {
+            "label": "feeRecipient",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_address",
+            "contract": "NFTAuctionMarketUUPS_V1",
+            "src": "contracts/NFTAuctionMarketUUPS_V1.sol:55"
+          },
+          {
+            "label": "feeBps",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_uint256",
+            "contract": "NFTAuctionMarketUUPS_V1",
+            "src": "contracts/NFTAuctionMarketUUPS_V1.sol:56"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)73_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)13_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(ReentrancyGuardStorage)226_storage": {
+            "label": "struct ReentrancyGuardUpgradeable.ReentrancyGuardStorage",
+            "members": [
+              {
+                "label": "_status",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_contract(AggregatorV3Interface)9669": {
+            "label": "contract AggregatorV3Interface",
+            "numberOfBytes": "20"
+          },
+          "t_contract(IERC20)2032": {
+            "label": "contract IERC20",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_uint256,t_struct(Auction)8800_storage)": {
+            "label": "mapping(uint256 => struct NFTAuctionMarketUUPS_V1.Auction)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Auction)8800_storage": {
+            "label": "struct NFTAuctionMarketUUPS_V1.Auction",
+            "members": [
+              {
+                "label": "seller",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "nft",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "tokenId",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "endTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "ended",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "highestBidToken",
+                "type": "t_address",
+                "offset": 1,
+                "slot": "4"
+              },
+              {
+                "label": "highestBidAmount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "5"
+              },
+              {
+                "label": "highestBidUsd18",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "6"
+              },
+              {
+                "label": "highestBidder",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "7"
+              },
+              {
+                "label": "minBidUsd18",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "8"
+              }
+            ],
+            "numberOfBytes": "288"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.ReentrancyGuard": [
+            {
+              "contract": "ReentrancyGuardUpgradeable",
+              "label": "_status",
+              "type": "t_uint256",
+              "src": "@openzeppelin/contracts-upgradeable/utils/ReentrancyGuardUpgradeable.sol:43",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

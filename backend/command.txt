@@ -1,0 +1,1 @@
+docker exec -it nft-auction-mysql mysql -u nft -p nft_auction
