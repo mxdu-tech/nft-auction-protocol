@@ -189,6 +189,17 @@ See /screenshots folder.
 
 ---
 
+## Design Considerations
+
+This project was built to explore the trade-offs between on-chain execution and off-chain indexing.
+
+Key considerations include:
+- Reducing RPC dependency via event-driven indexing
+- Ensuring upgrade safety with UUPS proxy pattern
+- Handling multi-token bidding with consistent price normalization
+
+The goal was to simulate a production-like architecture while keeping the system minimal and testable.
+
 ## What This Project Demonstrates
 
 - Production-style smart contract architecture
