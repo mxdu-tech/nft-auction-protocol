@@ -86,7 +86,7 @@ Frontend interacts with backend without touching blockchain:
 
 ## Project Structure
 
-nft-auction-dapp/
+nft-auction-protocol/
 ├── onchain/        # Smart contracts (Hardhat)
 ├── backend/        # Indexer + API (Go)
 
